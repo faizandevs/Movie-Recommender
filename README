@@ -1,0 +1,162 @@
+# 🎬 Netflix Movie Recommender System
+
+A semantic similarity search engine that recommends movies based on content understanding, not just keyword matching.
+
+## 🌐 Live Demo
+
+**Try the interactive app**: [Movie Recommender on Hugging Face](https://huggingface.co/spaces/YOUR_USERNAME/movie-recommender)
+
+## 📋 Overview
+
+This project demonstrates semantic search using machine learning to find similar movies based on plot, cast, director, and genre. Unlike traditional keyword search, it understands the _meaning_ behind movie descriptions.
+
+**Example**: Search for "The Prestige" and get recommendations like "The Illusionist", "Shutter Island", and other mind-bending thrillers with similar themes.
+
+---
+
+## 🎯 Key Features
+
+- **Semantic Understanding**: Finds movies by meaning, not just matching words
+- **Fast Search**: Uses FAISS for efficient similarity search across thousands of titles
+- **Interactive UI**: Built with Gradio for easy experimentation
+- **Pre-trained Model**: Leverages Sentence Transformers for high-quality embeddings
+
+---
+
+## 🛠️ Tech Stack
+
+| Component           | Technology                                 |
+| ------------------- | ------------------------------------------ |
+| **Embeddings**      | Sentence Transformers (`all-MiniLM-L6-v2`) |
+| **Search Engine**   | FAISS (Facebook AI Similarity Search)      |
+| **Web Interface**   | Gradio                                     |
+| **Data Processing** | Pandas, NumPy                              |
+| **Dataset**         | Netflix Titles (Kaggle)                    |
+
+---
+
+## 🚀 How It Works
+
+1. **Data Preprocessing**: Combine movie attributes (title, cast, director, genre, description) into a text representation
+2. **Embedding Generation**: Convert text into 384-dimensional vectors using Sentence Transformers
+3. **Index Creation**: Build FAISS index for efficient similarity search
+4. **Query Processing**: Convert user input to embedding and find nearest neighbors
+5. **Results**: Return top-k most similar movies with similarity scores
+
+---
+
+## 📊 Project Structure
+
+```
+movie-recommender/
+│
+├── Main.ipynb              # Data processing & model pipeline
+├── requirements.txt        # Python dependencies
+├── README.md              # This file
+│
+└── (Deployed on Hugging Face Spaces)
+    ├── app.py             # Gradio web interface
+    ├── netflix_titles.csv # Dataset
+    └── index              # Pre-computed FAISS index
+```
+
+---
+
+## 💻 Local Setup
+
+### Prerequisites
+
+- Python 3.8+
+- 4GB+ RAM
+- Netflix dataset (download from Kaggle)
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/YOUR_USERNAME/movie-recommender.git
+cd movie-recommender
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the notebook to generate index
+jupyter notebook Main.ipynb
+```
+
+### Running the App Locally
+
+```bash
+# Download the app.py from Hugging Face Space or create it
+python app.py
+```
+
+Visit `http://localhost:7860` in your browser.
+
+---
+
+## 📈 Model Performance
+
+- **Embedding Model**: `all-MiniLM-L6-v2`
+- **Vector Dimensions**: 384
+- **Dataset Size**: 8,807 titles
+- **Search Time**: <100ms per query
+- **Similarity Metric**: L2 (Euclidean distance)
+
+---
+
+## 🎓 Learning Outcomes
+
+This project demonstrates:
+
+- ✅ Text embedding and semantic similarity
+- ✅ Vector databases (FAISS)
+- ✅ ML model deployment with Gradio
+- ✅ Data preprocessing with Pandas
+- ✅ Cloud deployment (Hugging Face Spaces)
+
+---
+
+## 📝 Future Improvements
+
+- [ ] Add collaborative filtering for hybrid recommendations
+- [ ] Include user ratings and popularity scores
+- [ ] Support for multilingual search
+- [ ] Filter by year, genre, or rating
+- [ ] API endpoint for integration
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
+## 🙏 Acknowledgments
+
+- [Sentence Transformers](https://www.sbert.net/) by UKP Lab
+- [FAISS](https://github.com/facebookresearch/faiss) by Facebook Research
+- [Gradio](https://gradio.app/) by Hugging Face
+- Dataset from [Kaggle - Netflix Movies and TV Shows](https://www.kaggle.com/datasets/shivamb/netflix-shows)
+
+---
+
+## 👤 Author
+
+**Your Name**
+
+- GitHub: [@YOUR_USERNAME](https://github.com/faizandevs)
+- LinkedIn: [Your LinkedIn](https://linkedin.com/in/faizandev7)
+
+---
+
+## ⭐ Show Your Support
+
+Give a ⭐️ if this project helped you learn something new!
